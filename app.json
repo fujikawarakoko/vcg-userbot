@@ -1,6 +1,6 @@
 {
-  "name": "Telegram Voice Chat Music Player UserBot (tgvc-userbot)",
-  "description": "Telegram UserBot to Play Audio in Telegram Voice Chats",
+  "name": "PenggunaBot Pemutar Musik Obrolan Suara Telegram (vcg-userbot)",
+  "description": "Telegram UserBot untuk Memutar Audio di Obrolan Suara Telegram",
   "repository": "https://github.com/callsmusic/tgvc-userbot",
   "logo": "https://i.imgur.com/I1jB4i5.jpg",
   "keywords": [
@@ -17,19 +17,19 @@
   ],
   "env": {
     "API_ID": {
-            "description": "api_id part of your Telegram API Key from my.telegram.org/apps",
+            "description": "api_id bagian dari Kunci API Telegram Anda dari my.telegram.org/apps",
             "required": true
     },
     "API_HASH": {
-            "description": "api_hash part of your Telegram API Key from my.telegram.org/apps",
+            "description": "api_hash bagian dari Kunci API Telegram Anda dari my.telegram.org/apps",
             "required": true
     },
     "SESSION_NAME": {
-            "description": "Session string, read the README to learn how to export it with Pyrogram",
+            "description": "String sesi, baca README untuk mempelajari cara mengekspornya dengan Pyrogram",
             "required": true
     },
     "PLUGIN": {
-            "description": "Voice Chat Smart Plugin to enable, must be one of: player/channel/recorder/radio",
+            "description": "Plugin Cerdas Obrolan Suara untuk mengaktifkan, harus salah satu dari: player/channel/recorder/radio",
             "value": "player",
             "required": true
     }
