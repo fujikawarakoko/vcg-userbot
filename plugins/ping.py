@@ -59,7 +59,7 @@ async def _human_time_duration(seconds):
                    & ~filters.via_bot
                    & filters.regex("^!ping$"))
 async def ping_pong(_, m: Message):
-    """Reply ping with pong and delete both messages"""
+    """Balas ping dengan pong dan hapus kedua pesan"""
     start = time()
     m_reply = await m.reply_text("...")
     delta_ping = time() - start
@@ -80,6 +80,6 @@ async def get_uptime(_, m: Message):
     uptime = await _human_time_duration(int(uptime_sec))
     await m.reply_text(
         f"{emoji.ROBOT}\n"
-        f"- uptime: `{uptime}`\n"
-        f"- start time: `{START_TIME_ISO}`"
+        f"- waktu aktif: `{uptime}`\n"
+        f"- waktu mulai: `{START_TIME_ISO}`"
     )
