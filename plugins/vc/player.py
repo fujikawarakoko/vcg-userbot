@@ -48,21 +48,21 @@ DELETE_DELAY = 8
 DURATION_AUTOPLAY_MIN = 10
 DURATION_PLAY_HOUR = 3
 
-USERBOT_HELP = f"""{emoji.LABEL}  **Common Commands**:
+USERBOT_HELP = f"""{emoji.LABEL}  **Perintah Umum**:
 __available to group members of current voice chat__
 __starts with / (slash) or ! (exclamation mark)__
 
-\u2022 **/play**  reply with an audio to play/queue it, or show playlist
-\u2022 **/current**  show current playing time of current track
-\u2022 **/repo**  show git repository of the userbot
-\u2022 `!help`  show help for commands
+\u2022 **/play**  balas dengan audio untuk memutar/mengantrekannya, atau menampilkan daftar putar
+\u2022 **/current**  tampilkan waktu pemutaran saat ini dari trek saat ini
+\u2022 **/repo**  tampilkan repositori git dari userbot
+\u2022 **!help**  tunjukkan bantuan untuk perintah
 
 
-{emoji.LABEL}  **Admin Commands**:
+{emoji.LABEL}  **Perintah Admin**:
 __available to userbot account itself and its contacts__
 __starts with ! (exclamation mark)__
 
-\u2022 `!skip` [n] ...  skip current or n where n >= 2
+\u2022 `!skip`  lewati saat ini atau di mana
 \u2022 `!join`  join voice chat of current group
 \u2022 `!leave`  leave current voice chat
 \u2022 `!vc`  check which VC is joined
