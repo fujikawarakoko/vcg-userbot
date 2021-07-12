@@ -49,7 +49,7 @@ DURATION_AUTOPLAY_MIN = 10
 DURATION_PLAY_HOUR = 3
 
 USERBOT_HELP = f"""{emoji.LABEL}  **Perintah Umum**:
-_ tersedia untuk anggota grup obrolan suara saat ini _
+_tersedia untuk anggota grup obrolan suara saat ini_
 __dimulai dengan / (garis miring) atau ! (tanda seru)__
 
 \u2022 **/play**  balas dengan audio untuk memutar/mengantrekannya, atau menampilkan daftar putar
@@ -59,7 +59,7 @@ __dimulai dengan / (garis miring) atau ! (tanda seru)__
 
 
 {emoji.LABEL}  **Perintah Admin**:
-_ tersedia untuk akun userbot itu sendiri dan kontaknya _
+_tersedia untuk akun userbot itu sendiri dan kontaknya_
 __dimulai dengan ! (tanda seru)__
 
 \u2022 `!skip`  lewati saat ini atau di mana
