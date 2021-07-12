@@ -2,6 +2,6 @@
 
 ### ![DILIHAT](https://komarev.com/ghpvc/?username=Good-Boys-Exe&color=blue&style=flat-square&label=DILIHAT+👁‍🗨)
 
-# Deploy Ke Heroku
+# Heroku
 
-<p align="center"><a href="https://heroku.com/deploy?template=https://github.com/Good-Boys-Exe/vcg-userbot"> <img src="https://img.shields.io/badge/Deploy%20Ke%20Heroku-blue?style=for-the-badge&logo=heroku" width="220" height="38.45"/></a></p>
+p align="center"><a href="https://heroku.com/deploy?template=https://github.com/Good-Boys-Exe/vcg-userbot"><img src="https://img.shields.io/badge/BUAT DI-HEROKU-blue?style=plastic&logo=heroku&logoColor=yellow"width="300"heigh="100" /></a></p>
