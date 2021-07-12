@@ -45,7 +45,7 @@ from pyrogram.types import Message
 from pytgcalls import GroupCall
 
 DELETE_DELAY = 8
-DURATION_AUTOPLAY_MIN = 10
+DURATION_AUTOPLAY_MIN = 180
 DURATION_PLAY_HOUR = 3
 
 USERBOT_HELP = f"""{emoji.LABEL}  **Perintah Umum**:
@@ -78,7 +78,8 @@ dimulai dengan ! (tanda seru)
 USERBOT_REPO = f"""{emoji.ROBOT} **Bot Pengguna Obrolan Suara Telegram**
 
 - Repository: [GitHub](https://github.com/Good-Boys-Exe/vcg-userbot)
-- License: AGPL-3.0-or-later"""
+- License: AGPL-3.0-or-later
+- [ɢᴏᴏᴅ ʙᴏʏs](https://t.me/GB_03101999"""
 
 # - Pyrogram filters
 
@@ -178,8 +179,8 @@ async def play_track(client, m: Message):
         if m.audio.duration > (DURATION_AUTOPLAY_MIN * 300):
             reply = await m.reply_text(
                 f"{emoji.ROBOT} audio yang durasinya lebih lama dari "
-                f"{str(DURATION_AUTOPLAY_MIN)} min tidak akan otomatis "
-                "added to playlist"
+                f"{str(DURATION_AUTOPLAY_MIN)} menit tidak akan otomatis "
+                "ditambahkan ke daftar putar"
             )
             await _delay_delete_messages((reply,), DELETE_DELAY)
             return
