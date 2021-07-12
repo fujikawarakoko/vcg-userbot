@@ -49,18 +49,18 @@ DURATION_AUTOPLAY_MIN = 10
 DURATION_PLAY_HOUR = 3
 
 USERBOT_HELP = f"""{emoji.LABEL}  **Perintah Umum**:
-_tersedia untuk anggota grup obrolan suara saat ini_
-__dimulai dengan / (garis miring) atau ! (tanda seru)__
+tersedia untuk anggota grup obrolan suara saat ini
+dimulai dengan / (garis miring) atau ! (tanda seru)
 
 \u2022 **/play**  balas dengan audio untuk memutar/mengantrekannya, atau menampilkan daftar putar
 \u2022 **/current**  tampilkan waktu pemutaran saat ini dari trek saat ini
 \u2022 **/repo**  tampilkan repositori git dari userbot
-\u2022 **!help**  tunjukkan bantuan untuk perintah
+\u2022 **/help**  tunjukkan bantuan untuk perintah
 
 
 {emoji.LABEL}  **Perintah Admin**:
-_tersedia untuk akun userbot itu sendiri dan kontaknya_
-__dimulai dengan ! (tanda seru)__
+tersedia untuk akun userbot itu sendiri dan kontaknya
+dimulai dengan ! (tanda seru)
 
 \u2022 `!skip`  lewati saat ini atau di mana
 \u2022 `!join`  bergabung dengan obrolan suara grup saat ini
