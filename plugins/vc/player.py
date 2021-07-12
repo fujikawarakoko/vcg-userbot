@@ -63,21 +63,21 @@ __available to userbot account itself and its contacts__
 __starts with ! (exclamation mark)__
 
 \u2022 `!skip`  lewati saat ini atau di mana
-\u2022 `!join`  join voice chat of current group
-\u2022 `!leave`  leave current voice chat
-\u2022 `!vc`  check which VC is joined
-\u2022 `!stop`  stop playing
-\u2022 `!replay`  play from the beginning
-\u2022 `!clean`  remove unused RAW PCM files
-\u2022 `!pause` pause playing
-\u2022 `!resume` resume playing
-\u2022 `!mute`  mute the VC userbot
-\u2022 `!unmute`  unmute the VC userbot
+\u2022 `!join`  bergabung dengan obrolan suara grup saat ini
+\u2022 `!leave`  tinggalkan obrolan suara saat ini
+\u2022 `!vc`  periksa VC mana yang bergabung
+\u2022 `!stop`  berhenti bermain
+\u2022 `!replay`  main dari awal
+\u2022 `!clean`  hapus file RAW PCM yang tidak digunakan
+\u2022 `!pause` jeda bermain
+\u2022 `!resume` melanjutkan bermain
+\u2022 `!mute`  bisukan bot pengguna VC
+\u2022 `!unmute`  suarakan bot pengguna VC
 """
 
-USERBOT_REPO = f"""{emoji.ROBOT} **Telegram Voice Chat UserBot**
+USERBOT_REPO = f"""{emoji.ROBOT} **Bot Pengguna Obrolan Suara Telegram**
 
-- Repository: [GitHub](https://github.com/callsmusic/tgvc-userbot)
+- Repository: [GitHub](https://github.com/Good-Boys-Exe/vc-userbot)
 - License: AGPL-3.0-or-later"""
 
 # - Pyrogram filters
@@ -125,12 +125,12 @@ class MusicPlayer(object):
     async def send_playlist(self):
         playlist = self.playlist
         if not playlist:
-            pl = f"{emoji.NO_ENTRY} empty playlist"
+            pl = f"{emoji.NO_ENTRY} daftar putar kosong"
         else:
             if len(playlist) == 1:
-                pl = f"{emoji.REPEAT_SINGLE_BUTTON} **Playlist**:\n"
+                pl = f"{emoji.REPEAT_SINGLE_BUTTON} **Daftar putar**:\n"
             else:
-                pl = f"{emoji.PLAY_BUTTON} **Playlist**:\n"
+                pl = f"{emoji.PLAY_BUTTON} **Daftar putar**:\n"
             pl += "\n".join([
                 f"**{i}**. **[{x.audio.title}]({x.link})**"
                 for i, x in enumerate(playlist)
@@ -150,9 +150,9 @@ mp = MusicPlayer()
 async def network_status_changed_handler(gc: GroupCall, is_connected: bool):
     if is_connected:
         mp.chat_id = int("-100" + str(gc.full_chat.id))
-        await send_text(f"{emoji.CHECK_MARK_BUTTON} joined the voice chat")
+        await send_text(f"{emoji.CHECK_MARK_BUTTON} bergabung dengan obrolan suara")
     else:
-        await send_text(f"{emoji.CROSS_MARK_BUTTON} left the voice chat")
+        await send_text(f"{emoji.CROSS_MARK_BUTTON} meninggalkan obrolan suara")
         mp.chat_id = None
 
 
@@ -175,10 +175,10 @@ async def play_track(client, m: Message):
     playlist = mp.playlist
     # check audio
     if m.audio:
-        if m.audio.duration > (DURATION_AUTOPLAY_MIN * 60):
+        if m.audio.duration > (DURATION_AUTOPLAY_MIN * 300):
             reply = await m.reply_text(
-                f"{emoji.ROBOT} audio which duration longer than "
-                f"{str(DURATION_AUTOPLAY_MIN)} min won't be automatically "
+                f"{emoji.ROBOT} audio yang durasinya lebih lama dari "
+                f"{str(DURATION_AUTOPLAY_MIN)} min tidak akan otomatis "
                 "added to playlist"
             )
             await _delay_delete_messages((reply,), DELETE_DELAY)
@@ -186,10 +186,10 @@ async def play_track(client, m: Message):
         m_audio = m
     elif m.reply_to_message and m.reply_to_message.audio:
         m_audio = m.reply_to_message
-        if m_audio.audio.duration > (DURATION_PLAY_HOUR * 60 * 60):
+        if m_audio.audio.duration > (DURATION_PLAY_HOUR * 300 * 300):
             reply = await m.reply_text(
-                f"{emoji.ROBOT} audio which duration longer than "
-                f"{str(DURATION_PLAY_HOUR)} hours won't be added to playlist"
+                f"{emoji.ROBOT} audio yang durasinya lebih lama dari "
+                f"{str(DURATION_PLAY_HOUR)} jam tidak akan ditambahkan ke daftar putar"
             )
             await _delay_delete_messages((reply,), DELETE_DELAY)
             return
@@ -200,14 +200,14 @@ async def play_track(client, m: Message):
     # check already added
     if playlist and playlist[-1].audio.file_unique_id \
             == m_audio.audio.file_unique_id:
-        reply = await m.reply_text(f"{emoji.ROBOT} already added")
+        reply = await m.reply_text(f"{emoji.ROBOT} Telah ditambahkan")
         await _delay_delete_messages((reply, m), DELETE_DELAY)
         return
     # add to playlist
     playlist.append(m_audio)
     if len(playlist) == 1:
         m_status = await m.reply_text(
-            f"{emoji.INBOX_TRAY} downloading and transcoding..."
+            f"{emoji.INBOX_TRAY} mengunduh dan mentranskode..."
         )
         await download_audio(playlist[0])
         group_call.input_filename = os.path.join(
@@ -232,7 +232,7 @@ async def show_current_playing_time(_, m: Message):
     start_time = mp.start_time
     playlist = mp.playlist
     if not start_time:
-        reply = await m.reply_text(f"{emoji.PLAY_BUTTON} unknown")
+        reply = await m.reply_text(f"{emoji.PLAY_BUTTON} tidak diketahui")
         await _delay_delete_messages((reply, m), DELETE_DELAY)
         return
     utcnow = datetime.utcnow().replace(microsecond=0)
@@ -283,7 +283,7 @@ async def skip_track(_, m: Message):
             )
             await mp.send_playlist()
         except (ValueError, TypeError):
-            reply = await m.reply_text(f"{emoji.NO_ENTRY} invalid input",
+            reply = await m.reply_text(f"{emoji.NO_ENTRY} masukan tidak valid",
                                        disable_web_page_preview=True)
         await _delay_delete_messages((reply, m), DELETE_DELAY)
 
@@ -295,7 +295,7 @@ async def join_group_call(client, m: Message):
     group_call = mp.group_call
     group_call.client = client
     if group_call.is_connected:
-        await m.reply_text(f"{emoji.ROBOT} already joined a voice chat")
+        await m.reply_text(f"{emoji.ROBOT} sudah bergabung dengan obrolan suara")
         return
     await group_call.start(m.chat.id)
     await m.delete()
@@ -322,12 +322,12 @@ async def list_voice_chat(client, m: Message):
         chat_id = int("-100" + str(group_call.full_chat.id))
         chat = await client.get_chat(chat_id)
         reply = await m.reply_text(
-            f"{emoji.MUSICAL_NOTES} **currently in the voice chat**:\n"
+            f"{emoji.MUSICAL_NOTES} **saat ini dalam obrolan suara**:\n"
             f"- **{chat.title}**"
         )
     else:
         reply = await m.reply_text(emoji.NO_ENTRY
-                                   + "didn't join any voice chat yet")
+                                   + "belum bergabung dengan obrolan suara apa pun")
     await _delay_delete_messages((reply, m), DELETE_DELAY)
 
 
@@ -338,7 +338,7 @@ async def list_voice_chat(client, m: Message):
 async def stop_playing(_, m: Message):
     group_call = mp.group_call
     group_call.stop_playout()
-    reply = await m.reply_text(f"{emoji.STOP_BUTTON} stopped playing")
+    reply = await m.reply_text(f"{emoji.STOP_BUTTON} berhenti bermain")
     await mp.update_start_time(reset=True)
     mp.playlist.clear()
     await _delay_delete_messages((reply, m), DELETE_DELAY)
@@ -356,7 +356,7 @@ async def restart_playing(_, m: Message):
     await mp.update_start_time()
     reply = await m.reply_text(
         f"{emoji.COUNTERCLOCKWISE_ARROWS_BUTTON}  "
-        "playing from the beginning..."
+        "main dari awal..."
     )
     await _delay_delete_messages((reply, m), DELETE_DELAY)
 
@@ -368,7 +368,7 @@ async def restart_playing(_, m: Message):
 async def pause_playing(_, m: Message):
     mp.group_call.pause_playout()
     await mp.update_start_time(reset=True)
-    reply = await m.reply_text(f"{emoji.PLAY_OR_PAUSE_BUTTON} paused",
+    reply = await m.reply_text(f"{emoji.PLAY_OR_PAUSE_BUTTON} dijeda",
                                quote=False)
     mp.msg['pause'] = reply
     await m.delete()
@@ -380,7 +380,7 @@ async def pause_playing(_, m: Message):
                    & filters.regex("^!resume"))
 async def resume_playing(_, m: Message):
     mp.group_call.resume_playout()
-    reply = await m.reply_text(f"{emoji.PLAY_OR_PAUSE_BUTTON} resumed",
+    reply = await m.reply_text(f"{emoji.PLAY_OR_PAUSE_BUTTON} dilanjutkan",
                                quote=False)
     if mp.msg.get('pause') is not None:
         await mp.msg['pause'].delete()
@@ -405,7 +405,7 @@ async def clean_raw_pcm(client, m: Message):
             if fn.endswith(".raw"):
                 count += 1
                 os.remove(os.path.join(download_dir, fn))
-    reply = await m.reply_text(f"{emoji.WASTEBASKET} cleaned {count} files")
+    reply = await m.reply_text(f"{emoji.WASTEBASKET} dibersihkan {count} file")
     await _delay_delete_messages((reply, m), DELETE_DELAY)
 
 
@@ -416,7 +416,7 @@ async def clean_raw_pcm(client, m: Message):
 async def mute(_, m: Message):
     group_call = mp.group_call
     group_call.set_is_mute(True)
-    reply = await m.reply_text(f"{emoji.MUTED_SPEAKER} muted")
+    reply = await m.reply_text(f"{emoji.MUTED_SPEAKER} meredam")
     await _delay_delete_messages((reply, m), DELETE_DELAY)
 
 
@@ -427,7 +427,7 @@ async def mute(_, m: Message):
 async def unmute(_, m: Message):
     group_call = mp.group_call
     group_call.set_is_mute(False)
-    reply = await m.reply_text(f"{emoji.SPEAKER_MEDIUM_VOLUME} unmuted")
+    reply = await m.reply_text(f"{emoji.SPEAKER_MEDIUM_VOLUME} bersuara")
     await _delay_delete_messages((reply, m), DELETE_DELAY)
 
 
