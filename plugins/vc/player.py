@@ -79,7 +79,7 @@ USERBOT_REPO = f"""{emoji.ROBOT} **Bot Pengguna Obrolan Suara Telegram**
 
 - Repository: [GitHub](https://github.com/Good-Boys-Exe/vcg-userbot)
 - License: AGPL-3.0-or-later
-- [ɢᴏᴏᴅ ʙᴏʏs](https://t.me/GB_03101999)"""
+- Owner: [ɢᴏᴏᴅ ʙᴏʏs](https://t.me/GB_03101999)"""
 
 # - Pyrogram filters
 
