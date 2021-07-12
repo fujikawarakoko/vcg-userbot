@@ -49,8 +49,8 @@ DURATION_AUTOPLAY_MIN = 10
 DURATION_PLAY_HOUR = 3
 
 USERBOT_HELP = f"""{emoji.LABEL}  **Perintah Umum**:
-__available to group members of current voice chat__
-__starts with / (slash) or ! (exclamation mark)__
+_ tersedia untuk anggota grup obrolan suara saat ini _
+__dimulai dengan / (garis miring) atau ! (tanda seru)__
 
 \u2022 **/play**  balas dengan audio untuk memutar/mengantrekannya, atau menampilkan daftar putar
 \u2022 **/current**  tampilkan waktu pemutaran saat ini dari trek saat ini
@@ -59,8 +59,8 @@ __starts with / (slash) or ! (exclamation mark)__
 
 
 {emoji.LABEL}  **Perintah Admin**:
-__available to userbot account itself and its contacts__
-__starts with ! (exclamation mark)__
+_ tersedia untuk akun userbot itu sendiri dan kontaknya _
+__dimulai dengan ! (tanda seru)__
 
 \u2022 `!skip`  lewati saat ini atau di mana
 \u2022 `!join`  bergabung dengan obrolan suara grup saat ini
