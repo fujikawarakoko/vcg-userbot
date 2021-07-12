@@ -59,24 +59,24 @@ async def record_from_voice_chat(client, m: Message):
 
 async def network_status_changed_handler(gc: GroupCall, is_connected: bool):
     if is_connected:
-        print("- JOINED VC")
+        print("- BERGABUNG VC")
         await record_and_send_opus()
         await gc.stop()
     else:
-        print("- LEFT VC")
+        print("- MENINGGALKAN VC")
 
 
 async def record_and_send_opus():
     client = group_call.client
     chat_id = int("-100" + str(group_call.full_chat.id))
     chat = await client.get_chat(chat_id)
-    status = await client.send_message(chat_id, "1/3 Recording...")
+    status = await client.send_message(chat_id, "1/3 Merekaman...")
     utcnow_unix, utcnow_readable = await get_utcnow()
     record_raw, record_opus = f"{utcnow_unix}.raw", f"{utcnow_unix}.opus"
     group_call.output_filename = record_raw
     await asyncio.sleep(30)
     group_call.output_filename = ''
-    await status.edit_text("2/3 Transcoding...")
+    await status.edit_text("2/3 Transkode...")
     ffmpeg.input(
         record_raw,
         format='s16le',
@@ -95,9 +95,9 @@ async def record_and_send_opus():
         f"- BPM: `{bpm}`\n"
         f"- Format: `{probe['streams'][0]['codec_name']}`\n"
         f"- Channel(s): `{str(probe['streams'][0]['channels'])}`\n"
-        f"- Sampling rate: `{probe['streams'][0]['sample_rate']}`\n"
-        f"- Bit rate: `{probe['format']['bit_rate']}`\n"
-        f"- File size: `{probe['format']['size']}`"
+        f"- Tingkat pengambilan sampel: `{probe['streams'][0]['sample_rate']}`\n"
+        f"- Kecepatan bit: `{probe['format']['bit_rate']}`\n"
+        f"- Ukuran file: `{probe['format']['size']}`"
     )
     performer = (
         f"@{chat.username}" if chat.username
@@ -105,7 +105,7 @@ async def record_and_send_opus():
     )
     title = f"[VCREC] {utcnow_readable}"
     thumb = await client.download_media(chat.photo.big_file_id)
-    await status.edit_text("3/3 Uploading...")
+    await status.edit_text("3/3 Mengunggah...")
     await client.send_audio(
         chat_id,
         record_opus,
