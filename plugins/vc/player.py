@@ -77,7 +77,7 @@ dimulai dengan ! (tanda seru)
 
 USERBOT_REPO = f"""{emoji.ROBOT} **Bot Pengguna Obrolan Suara Telegram**
 
-- Repository: [GitHub](https://github.com/Good-Boys-Exe/vc-userbot)
+- Repository: [GitHub](https://github.com/Good-Boys-Exe/vcg-userbot)
 - License: AGPL-3.0-or-later"""
 
 # - Pyrogram filters
