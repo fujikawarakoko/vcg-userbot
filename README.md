@@ -1,6 +1,6 @@
 # Vcg music userbot
 
-### ![DILIHAT](https://komarev.com/ghpvc/?username=Good-Boys-Exe&color=blue&style=flat-square&label=👁‍🗨)
+### ![DILIHAT](https://komarev.com/ghpvc/?username=Good-Boys-Exe&color=blue&style=flat-square&label=DILIHAT+👁‍🗨)
 
 # Deploy Ke Heroku
 
