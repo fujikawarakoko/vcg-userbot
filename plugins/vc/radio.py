@@ -43,7 +43,7 @@ async def start(client, message: Message):
 
     if not message.reply_to_message or len(message.command) < 2:
         await message.reply_text(
-            'You forgot to replay list of stations or pass a station ID'
+            'Anda lupa memutar ulang daftar stasiun atau melewati ID stasiun'
         )
         return
 
@@ -63,7 +63,7 @@ async def start(client, message: Message):
             break
 
     if not station_stream_url:
-        await message.reply_text(f'Can\'t find a station with id {station_id}')
+        await message.reply_text(f'Tidak dapat menemukan stasiun dengan id {station_id}')
         return
 
     await group_call.start(message.chat.id)
@@ -77,7 +77,7 @@ async def start(client, message: Message):
     ).overwrite_output().run_async()
     FFMPEG_PROCESSES[message.chat.id] = process
 
-    await message.reply_text(f'Radio #{station_id} is playing...')
+    await message.reply_text(f'Radio #{station_id} sedang bermain...')
 
 
 @Client.on_message(anonymous & filters.command('stop', prefixes='!'))
