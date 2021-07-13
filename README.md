@@ -14,4 +14,4 @@ Klik tombol dibawah untuk mengambil Pyrogram String Session Atau pilih p bukan t
 # TELEGRAM
 🙎🏻‍♂ OWNER: [ɢᴏᴏᴅ ʙᴏʏs](https://t.me/GB_03101999)
 
-👥 GROUP: [Group Music Random](https://t.me/GroupMusicRandom)
+👥 GROUP: [Group Music](https://t.me/GroupMusicRandom)
