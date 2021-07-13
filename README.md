@@ -9,5 +9,8 @@
 ## ⚙️ SESSION STRING
 Klik tombol dibawah untuk mengambil Pyrogram String Session Atau pilih p bukan t
 
-<p align="center"><a href="https://replit.com/@GoodBoysExe/string-session?lite=1&outputonly=1"><img src="https://img.shields.io/badge/REPLIT-STRINGS-yellow?style=plastic&logo=replit&logoColor=yellow"width="270" height="40" /></a></p>
+<p align="center"><a href="https://replit.com/@GoodBoysExe/string-session?lite=1&outputonly=1"><img src="https://img.shields.io/badge/SESSION-STRINGS-yellow?style=plastic&logo=replit&logoColor=yellow"width="270" height="40" /></a></p>
 
+# TELEGRAM
+🙎🏻‍♂ OWNER: [ɢᴏᴏᴅ ʙᴏʏs](https://t.me/GB_03101999)
+👥 GROUP: [GroupMusicRandom](https://t.me/GroupMusicRandom)
