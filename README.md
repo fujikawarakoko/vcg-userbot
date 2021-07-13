@@ -1,4 +1,6 @@
-# MUSIC USERBOT
+<p align="center">
+  <img src="./etc/Music-Userbot.gif" alt="Music-Userbot Logo"width="400" height="60">
+</p>
 
 ### ![DILIHAT](https://komarev.com/ghpvc/?username=Good-Boys-Exe&color=blue&style=flat-square&label=DILIHAT+👁‍🗨)
 
