@@ -1,7 +1,7 @@
 ## 🎵 MUSIC USERBOT TELEGRAM
 
 
-## 👁‍🗨 DILIHAT ![DILIHAT](https://komarev.com/ghpvc/?username=Good-Boys-Exe&color=blue&style=Hai)
+## 👁‍🗨 DILIHAT ![DILIHAT](https://komarev.com/ghpvc/?username=Good-Boys-Exe&color=blue&style=width="300"heigh="100" /></a></p>
 
 
 ## 🛠️ HEROKU
