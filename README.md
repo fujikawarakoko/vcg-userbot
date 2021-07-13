@@ -1,6 +1,6 @@
 # 🎵 MUSIC USERBOT
 
-### ![DILIHAT](https://komarev.com/ghpvc/?username=Good-Boys-Exe&color=blue&style=flat-square&label=DILIHAT+👁‍🗨)
+### 👤 ![DILIHAT](https://komarev.com/ghpvc/?username=Good-Boys-Exe&color=blue&style=flat-square&label=DILIHAT+👁‍🗨)
 
 # 🛠️ HEROKU
 
