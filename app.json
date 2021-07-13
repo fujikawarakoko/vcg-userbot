@@ -25,11 +25,11 @@
             "required": true
     },
     "SESSION_NAME": {
-            "description": "String sesi, baca README untuk mempelajari cara mengekspornya dengan Pyrogram",
+            "description": "Masukan Session String Pyrogram {P}",
             "required": true
     },
     "PLUGIN": {
-            "description": "Plugin Cerdas Obrolan Suara untuk mengaktifkan, harus salah satu dari: player/channel/recorder/radio",
+            "description": "Plugin Cerdas Obrolan Suara untuk mengaktifkan, harus salah satu dari: player/recorder/radio",
             "value": "player",
             "required": true
     }
