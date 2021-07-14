@@ -15,6 +15,6 @@ Klik tombol dibawah untuk mengambil Pyrogram String Session Atau pilih p bukan t
 
 ## TELEGRAM
 <p>
-    <a href="https://t.me/GB_03101999" target="blank"><img src="https://img.shields.io/badge/OWNER: ɢᴏᴏᴅ ʙᴏʏs-blue?style=plastic&logo=telegram"width="254" height="52"/></a>
+    <a href="https://t.me/GB_03101999" target="blank"><img src="https://img.shields.io/badge/OWNER: ɢᴏᴏᴅ ʙᴏʏs-red?style=plastic&logo=telegram"width="254" height="52"/></a>
     <a href="https://t.me/GroupMusicRandom" target="blank"><img src="https://img.shields.io/badge/JOIN MUSIC GROUP-red?style=plastic&logo=telegram"width="319" height="52"/></a>
 </p>
